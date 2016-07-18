@@ -1,0 +1,19 @@
+id: d7_nodequeue
+label: Node queue
+migration_tags:
+  - Drupal 7
+source:
+  plugin: d7_nodequeue
+  constants:
+    target_type: node
+    entity_handler: default:node
+process:
+  id: name
+  label: title
+  handler: handler
+  entity_settings/target_type: 'constants/target_type'
+  entity_settings/handler: 'constants/entity_handler'
+  entity_settings/handler_settings/target_bundles: target_bundles
+  queue_settings/max_size: size
+destination:
+  plugin: entity:entity_queue
