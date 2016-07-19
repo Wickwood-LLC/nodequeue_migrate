@@ -11,3 +11,6 @@ process:
   items: items
 destination:
   plugin: entity:entity_subqueue
+migration_dependencies:
+  required:
+    - d7_nodequeue
