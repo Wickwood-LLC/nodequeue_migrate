@@ -13,6 +13,9 @@ use Drupal\Tests\migrate_drupal\Kernel\d7\MigrateDrupal7TestBase;
  */
 class MigrateNodeQueueTest extends MigrateDrupal7TestBase {
 
+  /**
+   * {@inheritdoc}
+   */
   static $modules = [
     'node',
     'nodequeue_migrate',
@@ -32,6 +35,20 @@ class MigrateNodeQueueTest extends MigrateDrupal7TestBase {
     ]);
   }
 
+  /**
+   * Asserts various aspects of a entityqueue entity.
+   *
+   * @param $id
+   *   The entityqueue id.
+   * @param $label
+   *   The expected label.
+   * @param $target_bundles
+   *   The expected target bundles.
+   * @param string $handler
+   *   The expected handler.
+   * @param int $max_size
+   *   The expected maximum size.
+   */
   protected function assertQueueEntity($id, $label, $target_bundles, $handler = 'simple', $max_size = 0) {
     /** @var EntityQueue $queue */
     $queue = EntityQueue::load($id);
@@ -42,6 +59,18 @@ class MigrateNodeQueueTest extends MigrateDrupal7TestBase {
     $this->assertSame($max_size, $queue->getMaximumSize());
   }
 
+  /**
+   * Asserts various aspects of a entitysubqueue entity.
+   *
+   * @param $id
+   *   The entitysubqueue id.
+   * @param $queue_id
+   *   The expected entityqueue id.
+   * @param $title
+   *   The expected entitysubqueue title.
+   * @param $items
+   *   The expected items.
+   */
   protected function assertSubqueueEntity($id, $queue_id, $title, $items) {
     /** @var EntitySubqueue $subqueue */
     $subqueue = EntitySubqueue::load($id);
