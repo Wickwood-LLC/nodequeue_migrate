@@ -22,7 +22,7 @@ class NodeQueue extends DrupalSqlBase {
       'qid',
       'title',
       'size',
-      'name'
+      'name',
     ]);
   }
 

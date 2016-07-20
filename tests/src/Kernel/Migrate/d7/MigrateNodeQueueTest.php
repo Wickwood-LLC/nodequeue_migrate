@@ -16,7 +16,7 @@ class MigrateNodeQueueTest extends MigrateDrupal7TestBase {
   /**
    * {@inheritdoc}
    */
-  static $modules = [
+  public static $modules = [
     'node',
     'nodequeue_migrate',
     'entityqueue',
@@ -38,11 +38,11 @@ class MigrateNodeQueueTest extends MigrateDrupal7TestBase {
   /**
    * Asserts various aspects of a entityqueue entity.
    *
-   * @param $id
+   * @param string $id
    *   The entityqueue id.
-   * @param $label
+   * @param string $label
    *   The expected label.
-   * @param $target_bundles
+   * @param array $target_bundles
    *   The expected target bundles.
    * @param string $handler
    *   The expected handler.
@@ -62,13 +62,13 @@ class MigrateNodeQueueTest extends MigrateDrupal7TestBase {
   /**
    * Asserts various aspects of a entitysubqueue entity.
    *
-   * @param $id
+   * @param string $id
    *   The entitysubqueue id.
-   * @param $queue_id
+   * @param string $queue_id
    *   The expected entityqueue id.
-   * @param $title
+   * @param string $title
    *   The expected entitysubqueue title.
-   * @param $items
+   * @param array $items
    *   The expected items.
    */
   protected function assertSubqueueEntity($id, $queue_id, $title, $items) {
@@ -93,4 +93,5 @@ class MigrateNodeQueueTest extends MigrateDrupal7TestBase {
     $this->assertSubqueueEntity('2', 'queue_parent_example', 'Subqueue example 2', [1]);
     $this->assertSubqueueEntity('3', 'queue_parent_example', 'Subqueue example 3', [2, 3]);
   }
+
 }

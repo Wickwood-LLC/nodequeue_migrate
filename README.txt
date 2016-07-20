@@ -26,7 +26,7 @@ INSTALLATION
 ------------
 
 Install as usual:
- * Place this entire directory in the /modules folder of your Drupal installation
+ * Place the entire directory in the /modules folder of your Drupal installation
  * Navigate to Administer > Extend
  * Check the 'Enabled' box next to the 'Nodequeue migrate'
  * Click the 'Save Configuration' button at the bottom.
@@ -41,4 +41,4 @@ CONTACT
 Current maintainer(s):
  * Jo Fitzgerald - https://www.drupal.org/user/2617663
 
-This module has been supported by ComputerMinds - https://www.computerminds.co.uk
+This module has been supported by ComputerMinds - http://www.computerminds.co.uk
