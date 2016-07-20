@@ -52,7 +52,7 @@ class MigrateNodeQueueTest extends MigrateDrupal7TestBase {
   protected function assertQueueEntity($id, $label, $target_bundles, $handler = 'simple', $max_size = 0) {
     /** @var EntityQueue $queue */
     $queue = EntityQueue::load($id);
-    $this->assertInstanceOf(EntityQueue::class, $queue);
+    $this->assertInstanceOf('Drupal\entityqueue\Entity\EntityQueue', $queue);
     $this->assertSame($label, $queue->label());
     $this->assertSame($target_bundles, $queue->getEntitySettings()['handler_settings']['target_bundles']);
     $this->assertSame($handler, $queue->getHandler());
@@ -74,7 +74,7 @@ class MigrateNodeQueueTest extends MigrateDrupal7TestBase {
   protected function assertSubqueueEntity($id, $queue_id, $title, $items) {
     /** @var EntitySubqueue $subqueue */
     $subqueue = EntitySubqueue::load($id);
-    $this->assertInstanceOf(EntitySubqueue::class, $subqueue);
+    $this->assertInstanceOf('Drupal\entityqueue\Entity\EntitySubqueue', $subqueue);
     $this->assertSame($queue_id, $subqueue->getQueue()->id());
     $this->assertSame($title, $subqueue->getTitle());
     foreach ($subqueue->get('items')->getValue() as $key => $item) {
