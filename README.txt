@@ -2,14 +2,14 @@
 CONTENTS OF THIS FILE
 ---------------------
 
- * About Nodequeue Migrate
+ * Introduction
  * Requirements
  * Installation
  * Contact
 
 
-ABOUT NODEQUEUE MIGRATE
------------------------
+INTRODUCTION
+------------
 
 The Nodequeue Migrate module enables the migrating of Drupal 7 Nodequeue data
 into Drupal 8 Entityqueue data.
@@ -35,8 +35,14 @@ For general help regarding installation, visit:
 https://www.drupal.org/documentation/install/modules-themes/modules-8
 
 
-CONTACT
--------
+CONFIGURATION
+-------------
+
+The module has no menu or modifiable settings. There is no configuration.
+
+
+MAINTAINERS
+-----------
 
 Current maintainer(s):
  * Jo Fitzgerald - https://www.drupal.org/user/2617663
