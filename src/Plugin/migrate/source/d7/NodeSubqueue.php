@@ -9,7 +9,8 @@ use Drupal\migrate_drupal\Plugin\migrate\source\DrupalSqlBase;
  * Drupal 7 nodesubqueue source from database.
  *
  * @MigrateSource(
- *   id = "d7_nodesubqueue"
+ *   id = "d7_nodesubqueue",
+ *   source_module = "nodequeue"
  * )
  */
 class NodeSubqueue extends DrupalSqlBase {
